@@ -4,7 +4,7 @@
 		"postgres-jdbc-1754c7da7d2-67614af50f4425aa": {
 			"provider": "postgresql",
 			"driver": "postgres-jdbc",
-			"name": "postgres 2",
+			"name": "postgres",
 			"save-password": true,
 			"show-system-objects": true,
 			"read-only": false,
@@ -20,8 +20,34 @@
 					"postgresql.dd.plain.string": "false",
 					"postgresql.dd.tag.string": "false"
 				},
-				"auth-model": "native",
-				"handlers": {}
+				"auth-model": "native"
+			}
+		}
+	},
+	"virtual-models": {
+		"postgres-jdbc-1754c7da7d2-67614af50f4425aa": {
+			"postgres": {
+				"public": {
+					"@properties": {
+						"erd.diagram.state": {
+							"serialized": "<diagram version=\"1\" name=\"public\" time=\"202010241150\"><entities><data-source id=\"postgres-jdbc-1754c7da7d2-67614af50f4425aa\"><entity id=\"1\" name=\"regiones\" fq-name=\"public.regiones\" order=\"0\" x=\"51\" y=\"139\"><path name=\"public\"/><path name=\"postgres\"/></entity><entity id=\"2\" name=\"muertes\" fq-name=\"public.muertes\" order=\"1\" x=\"249\" y=\"267\"><path name=\"public\"/><path name=\"postgres\"/></entity><entity id=\"3\" name=\"dia\" fq-name=\"public.dia\" order=\"2\" x=\"467\" y=\"149\"><path name=\"public\"/><path name=\"postgres\"/></entity><entity id=\"4\" name=\"evento\" fq-name=\"public.evento\" order=\"3\" border-width=\"3\" x=\"519\" y=\"323\"><path name=\"public\"/><path name=\"postgres\"/></entity><entity id=\"5\" name=\"casos\" fq-name=\"public.casos\" order=\"4\" x=\"240\" y=\"38\"><path name=\"public\"/><path name=\"postgres\"/></entity></data-source></entities><relations><relation name=\"muertes_fk\" fq-name=\"public.muertes.muertes_fk\" type=\"fk\" pk-ref=\"1\" fk-ref=\"2\"/><relation name=\"casos_fk\" fq-name=\"public.casos.casos_fk\" type=\"fk\" pk-ref=\"1\" fk-ref=\"5\"/><relation name=\"muertes_fk_1\" fq-name=\"public.muertes.muertes_fk_1\" type=\"fk\" pk-ref=\"3\" fk-ref=\"2\"/><relation name=\"evento_fk\" fq-name=\"public.evento.evento_fk\" type=\"fk\" pk-ref=\"3\" fk-ref=\"4\"/><relation name=\"casos_fk_1\" fq-name=\"public.casos.casos_fk_1\" type=\"fk\" pk-ref=\"3\" fk-ref=\"5\"/></relations></diagram>"
+						}
+					},
+					":casos": {
+						"properties": {
+							"erd.diagram.state": {
+								"serialized": "<diagram version=\"1\" name=\"casos\" time=\"202010241143\"><entities><data-source id=\"postgres-jdbc-1754c7da7d2-67614af50f4425aa\"><entity id=\"1\" name=\"casos\" fq-name=\"public.casos\" order=\"0\" color-bg=\"255,128,64\" x=\"350\" y=\"55\"><path name=\"public\"/><path name=\"postgres\"/></entity><entity id=\"2\" name=\"regiones\" fq-name=\"public.regiones\" order=\"1\" border-width=\"3\" x=\"96\" y=\"155\"><path name=\"public\"/><path name=\"postgres\"/></entity><entity id=\"3\" name=\"dia\" fq-name=\"public.dia\" order=\"2\" x=\"428\" y=\"275\"><path name=\"public\"/><path name=\"postgres\"/></entity></data-source></entities><relations><relation name=\"casos_fk\" fq-name=\"public.casos.casos_fk\" type=\"fk\" pk-ref=\"2\" fk-ref=\"1\"/><relation name=\"casos_fk_1\" fq-name=\"public.casos.casos_fk_1\" type=\"fk\" pk-ref=\"3\" fk-ref=\"1\"/></relations></diagram>"
+							}
+						}
+					}
+				},
+				"sisinfo2020": {
+					"@properties": {
+						"erd.diagram.state": {
+							"serialized": "<diagram version=\"1\" name=\"sisinfo2020\" time=\"202010241202\"><entities><data-source id=\"postgres-jdbc-1754c7da7d2-67614af50f4425aa\"><entity id=\"1\" name=\"regiones\" fq-name=\"sisinfo2020.regiones\" order=\"0\" x=\"20\" y=\"42\"><path name=\"sisinfo2020\"/><path name=\"postgres\"/></entity><entity id=\"2\" name=\"muertes\" fq-name=\"sisinfo2020.muertes\" order=\"1\" x=\"169\" y=\"42\"><path name=\"sisinfo2020\"/><path name=\"postgres\"/></entity><entity id=\"3\" name=\"dia\" fq-name=\"sisinfo2020.dia\" order=\"2\" border-width=\"3\" x=\"328\" y=\"118\"><path name=\"sisinfo2020\"/><path name=\"postgres\"/></entity><entity id=\"4\" name=\"evento\" fq-name=\"sisinfo2020.evento\" order=\"3\" x=\"675\" y=\"34\"><path name=\"sisinfo2020\"/><path name=\"postgres\"/></entity><entity id=\"5\" name=\"casos\" fq-name=\"sisinfo2020.casos\" order=\"4\" x=\"556\" y=\"51\"><path name=\"sisinfo2020\"/><path name=\"postgres\"/></entity><entity id=\"6\" name=\"usuarios\" fq-name=\"sisinfo2020.usuarios\" order=\"5\" x=\"819\" y=\"47\"><path name=\"sisinfo2020\"/><path name=\"postgres\"/></entity></data-source></entities><relations/></diagram>"
+						}
+					}
+				}
 			}
 		}
 	},
